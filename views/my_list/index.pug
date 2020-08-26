@@ -1,0 +1,24 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Document
+style.
+  .none-list-style{
+    list-style:none;
+  }
+if user
+  p= user.name
+form(action="/user/search" Method="GET")
+  input(type="text", name="q")
+  button search
+a(href='/user/creatUser') Create Users
+h1 List User Registered
+ul.none-list-style
+  each val in users
+    li
+      span= val.name
+      span &nbsp
+      span= val.phone
+      span &nbsp
+      a(href='/user/' + val.id) View

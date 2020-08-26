@@ -1,0 +1,20 @@
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Document
+if user
+  p= user.name
+if errors
+  ul
+    each value in errors
+      li= value
+form(action="/user/creatUser", method="POST")
+    label Full Name:
+    input(type="text", name="name", placeholder="name")
+    label Phone:
+    input(type="text", name="phone", placeholder="Phone")
+    label Email:
+    input(type="email", name="email", placeholder="E-mail")
+    label Password:
+    input(type="password", name="password",placeholder="password")
+    button Add

@@ -1,0 +1,20 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Document
+if errors
+  ul
+    each value in errors
+      li= value
+form( method="POST")
+    label(for="password") tai khoan
+    span &nbsp
+    input(name="email", type="text", value=value?value.name : "")
+    br
+    br
+    label(for="password") mat khau
+    span &nbsp
+    input(type="password", name="password", value=value?value.password : "")
+    br
+    button Login
